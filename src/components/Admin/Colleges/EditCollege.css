@@ -1,0 +1,158 @@
+:root {
+  --primary-color: #6a11cb;
+  --secondary-color: #2575fc;
+  --background-color: #0f0f1e;
+  --text-color: #ffffff;
+  --input-bg: rgba(255, 255, 255, 0.1);
+  --success-color: #4caf50;
+  --error-color: #f44336;
+}
+
+.add-college-container {
+  background-color: var(--background-color);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Roboto', sans-serif;
+}
+
+.add-college-form {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 40px;
+  width: 100%;
+  max-width: 500px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+  animation: fadeIn 0.5s ease-out;
+}
+
+.add-college-form h2 {
+  color: var(--text-color);
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 2.5rem;
+  font-weight: 300;
+  letter-spacing: 2px;
+  animation: slideDown 0.5s ease-out;
+}
+
+.form-group {
+  margin-bottom: 30px; /* Increased bottom margin for better spacing */
+  position: relative;
+}
+
+.form-group label {
+  display: block;
+  color: var(--text-color); /* Classic white color */
+  margin-bottom: 10px; /* Space below the label */
+  font-size: 1.1rem; /* Larger font size */
+  letter-spacing: 1px;
+  font-weight: bold; /* Make the label bold */
+  transition: none; /* No transitions */
+}
+
+.form-group input {
+  width: 100%;
+  padding: 12px;
+  background-color: var(--input-bg);
+  border: none;
+  border-radius: 8px;
+  color: var(--text-color);
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.form-group input:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--secondary-color);
+}
+
+
+
+.toggle-password-icon {
+  position: absolute;
+  top: 55%;
+  right: 10px;
+  cursor: pointer;
+  color: var(--text-color);
+  transition: color 0.3s ease;
+}
+
+.toggle-password-icon:hover {
+  color: var(--secondary-color);
+}
+
+button[type="submit"] {
+  width: 100%;
+  padding: 12px;
+  background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+  border: none;
+  border-radius: 8px;
+  color: var(--text-color);
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+button[type="submit"]::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: all 0.5s ease;
+}
+
+button[type="submit"]:hover::before {
+  width: 300px;
+  height: 300px;
+}
+
+button[type="submit"]:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.success-message, .error-message {
+  margin-top: 20px;
+  padding: 10px;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: bold;
+  animation: fadeIn 0.5s ease-out;
+}
+
+.success-message {
+  background-color: var(--success-color);
+  color: var(--text-color);
+}
+
+.error-message {
+  background-color: var(--error-color);
+  color: var(--text-color);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideDown {
+  from { transform: translateY(-20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+  .add-college-form {
+      padding: 20px;
+  }
+}

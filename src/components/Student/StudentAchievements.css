@@ -1,0 +1,118 @@
+.student-achievements {
+    background: linear-gradient(135deg, #1a1a2e, #16213e);
+    color: #e94560;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.student-achievements:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+}
+
+.student-achievements h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    animation: glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+    from {
+        text-shadow: 0 0 5px #e94560, 0 0 10px #e94560;
+    }
+    to {
+        text-shadow: 0 0 10px #e94560, 0 0 20px #e94560;
+    }
+}
+
+.loading-spinner {
+    width: 50px;
+    height: 50px;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top-color: #e94560;
+    animation: spin 1s ease-in-out infinite;
+    margin: 2rem auto;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+.achievement-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.achievement-item {
+    background-color: rgba(255, 255, 255, 0.1);
+    margin-bottom: 1rem;
+    padding: 1.5rem;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    animation: fadeIn 0.5s ease-out forwards;
+    opacity: 0;
+}
+
+.achievement-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+.achievement-content h3 {
+    margin: 0 0 0.5rem;
+    font-size: 1.2rem;
+    color: #ff6b6b;
+}
+
+.achievement-content p {
+    margin: 0 0 0.5rem;
+    color: #a0a0a0;
+}
+
+.achievement-date {
+    font-size: 0.9rem;
+    color: #a0a0a0;
+    display: block;
+    margin-top: 0.5rem;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.achievement-item:nth-child(1) { animation-delay: 0.1s; }
+.achievement-item:nth-child(2) { animation-delay: 0.2s; }
+.achievement-item:nth-child(3) { animation-delay: 0.3s; }
+.achievement-item:nth-child(4) { animation-delay: 0.4s; }
+.achievement-item:nth-child(5) { animation-delay: 0.5s; }
+/* Add more if needed for larger lists */
+
+@media (max-width: 600px) {
+    .student-achievements {
+        padding: 1.5rem;
+    }
+
+    .student-achievements h2 {
+        font-size: 2rem;
+    }
+
+    .achievement-item {
+        padding: 1rem;
+    }
+}

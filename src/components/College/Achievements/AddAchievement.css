@@ -1,0 +1,193 @@
+.add-achievement-form {
+    background: linear-gradient(135deg, #1a1a2e, #16213e);
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    max-width: 500px;
+    margin: 0 auto;
+    animation: fadeIn 0.5s ease-out forwards;
+}
+.add-achievement-form h3 {
+  color: #e94560;
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  animation: glow 2s ease-in-out infinite alternate;
+}
+
+.form-title {
+    color: #e94560;
+    text-align: center;
+    margin-bottom: 1rem;
+    font-size: 1.8rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    animation: slideIn 0.5s ease forwards;
+}
+
+.add-achievement-form label {
+    color: #e94560;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    display: block;
+    opacity: 0;
+    animation: fadeIn 0.5s ease forwards;
+}
+
+.add-achievement-form input,
+.add-achievement-form select,
+.add-achievement-form textarea {
+    width: 100%;
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+    border: none;
+    border-radius: 25px;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #e94560;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    opacity: 0;
+    animation: fadeIn 0.5s ease forwards;
+}
+
+.add-achievement-form input:focus,
+.add-achievement-form select:focus,
+.add-achievement-form textarea:focus {
+    outline: none;
+    background-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 10px rgba(233, 69, 96, 0.5);
+    transform: scale(1.02);
+}
+
+.add-achievement-form button {
+    width: 100%;
+    padding: 0.75rem;
+    border: none;
+    border-radius: 25px;
+    background-color: #e94560;
+    color: #1a1a2e;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.add-achievement-form button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: all 0.5s ease;
+}
+
+.add-achievement-form button:hover::before {
+    left: 100%;
+}
+
+.add-achievement-form button:hover {
+    background-color: #ff6b6b;
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+.checkbox-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.checkbox {
+  display: none; /* Hide the default checkbox */
+}
+
+.checkbox-label {
+  position: relative;
+  padding-left: 35px; /* Space for custom checkbox */
+  cursor: pointer;
+  color: #e94560;
+  font-weight: bold;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.checkbox-label::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  border: 2px solid #f8f1f3;
+  border-radius: 4px; /* Change to circle if you prefer */
+  background-color: transparent;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Change the color of the checkbox when checked */
+.checkbox:checked + .checkbox-label::before {
+  background-color: #e00c36;
+}
+
+/* Checkmark style */
+.checkbox:checked + .checkbox-label::after {
+  content: '';
+  position: absolute;
+  left: 8px;
+  top: 3px; /* Adjust position for centering */
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+.checkbox:checked + .checkbox-label::after {
+  opacity: 1; /* Show checkmark when checked */
+}
+
+/* Hover effect on label */
+.checkbox-label:hover {
+  color: #f1190a; /* Change color on hover */
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+@keyframes glow {
+  from {
+      text-shadow: 0 0 5px #e94560, 0 0 10px #e94560;
+  }
+  to {
+      text-shadow: 0 0 10px #e94560, 0 0 20px #e94560;
+  }
+}

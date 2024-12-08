@@ -1,0 +1,185 @@
+.login-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw; /* Make sure the container takes the full width */
+    position: relative;
+    overflow: hidden;
+    padding: 0 20px; /* Optional: Add some horizontal padding if needed */
+    background: white; /* Change background to white */
+}
+
+
+.login-box-wrapper {
+    position: relative;
+    z-index: 1;
+    max-width: 800px; /* Increase this value to make the login box wider */
+    width: 100%; /* Ensure it takes the full available width */
+}
+
+.login-box {
+    margin-top: -10px; 
+    background: rgba(255, 255, 255, 0.2); /* White with transparency */
+    border-radius: 16px;
+    padding: 40px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    transform-style: preserve-3d;
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+    animation: fadeIn 1s ease-out;
+}
+
+.login-box:hover {
+    transform: translateY(-10px) rotateX(5deg) rotateY(5deg);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+h2 {
+    color: #000000; /* Black color */
+    margin-bottom: 30px;
+    font-size: 2.5em;
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.5);
+    animation: slideDown 0.5s ease-out;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+input {
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    background: rgba(0, 0, 0, 0.1); /* Light black with transparency */
+    color: #000000; /* Black text */
+    font-size: 16px;
+    transition: all 0.4s ease;
+    animation: slideRight 0.5s ease-out;
+}
+
+input::placeholder {
+    color: rgba(0, 0, 0, 0.5);
+}
+
+input:focus {
+    outline: none;
+    background: rgba(0, 0, 0, 0.2);
+    transform: scale(1.05);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Glow effect on focus */
+}
+
+button {
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    background: rgba(0, 0, 0, 0.7); /* Dark black */
+    color: #ffffff; /* White text */
+    font-size: 18px;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    animation: slideUp 0.5s ease-out;
+}
+
+button:hover {
+    background: rgba(0, 0, 0, 0.8); /* Darker black on hover */
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+button:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+/* Dropdown Menu Styles */
+select {
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    background: rgba(0, 0, 0, 0.1); /* Light black with transparency */
+    color: #000000; /* Black text */
+    font-size: 16px;
+    transition: background 0.4s ease, transform 0.4s ease;
+    appearance: none;
+    background-image: url('data:image/svg+xml;charset=UTF-8,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="%23000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"%3E%3Cpolyline points="6 9 12 15 18 9"/%3E%3C/svg%3E');
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 12px;
+}
+
+select:hover {
+    background: rgba(0, 0, 0, 0.2); /* Darker black on hover */
+    transform: scale(1.02);
+}
+
+select:focus {
+    outline: none;
+    background: rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Glow effect on focus */
+    transform: scale(1.05);
+}
+
+.back-button {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    padding: 10px 20px;
+    background-color: #000000; /* Black background */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.back-button:hover {
+    background-color: #444444; /* Darker black on hover */
+}
+
+/* Animation for dropdown options */
+@keyframes dropdownFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Apply animation to the dropdown options */
+select option {
+    animation: dropdownFadeIn 0.3s ease forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideDown {
+    from { transform: translateY(-20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes slideRight {
+    from { transform: translateX(-20px); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes slideUp {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+    100% { transform: translateY(0px); }
+}

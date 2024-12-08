@@ -1,0 +1,96 @@
+.achievement-list {
+    padding: 20px;
+    background-color: #1a1a2e; /* Dark background for contrast */
+    color: #fff; /* White text for readability */
+}
+
+.achievement-title {
+    font-size: 2.5rem; /* Larger title */
+    margin-bottom: 30px; /* Space below title */
+    text-align: center; /* Center the title */
+    background: linear-gradient(45deg, #00b4d8, #48cae4); /* Gradient effect */
+    -webkit-background-clip: text; /* Gradient text */
+    background-clip: text;
+    -webkit-text-fill-color: transparent; /* Make text transparent */
+    color: transparent; /* Override default color */
+}
+
+.achievement-grid {
+    display: grid; /* Grid layout */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive columns */
+    gap: 20px; /* Space between grid items */
+}
+
+.achievement-card {
+    background: rgba(255, 255, 255, 0.1); /* Semi-transparent background */
+    display: flex;
+    flex-direction: column; /* Change to column to stack title on top */
+    border-radius: 10px; /* Rounded corners */
+    padding: 20px; /* Inner padding */
+    transition: all 0.3s ease; /* Smooth transition for hover effects */
+    cursor: pointer; /* Pointer cursor on hover */
+    overflow: hidden; /* Hide overflow */
+    position: relative; /* Position for pseudo-element */
+    animation: fadeIn 0.5s ease forwards; /* Fade-in animation */
+    opacity: 0; /* Initially invisible for animation */
+}
+
+/* Position for each card effect */
+.achievement-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0) 70%);
+    transform: rotate(45deg);
+    transition: all 0.5s ease; /* Transition for hover effect */
+    opacity: 0; /* Initially hidden */
+}
+
+.achievement-card:hover {
+    transform: translateY(-5px); /* Raise card on hover */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Shadow effect */
+}
+
+.achievement-card:hover::before {
+    opacity: 1; /* Show the overlay on hover */
+}
+
+.achievement-card h4 {
+    font-size: 1.2rem; /* Title size */
+    margin-bottom: 10px; /* Space below title */
+    color: #48cae4; /* Title color */
+    align-self: flex-start; /* Align title to top left */
+}
+
+.achievement-card p {
+    font-size: 0.9rem; /* Description size */
+    margin: 0; /* Remove margin */
+}
+.achievement-card .content {
+    display: flex; /* Use flex to arrange description and date */
+    flex-direction: row; /* Arrange in a row */
+    justify-content: space-between; /* Space between description and date */
+    width: 100%; /* Full width */
+}
+
+.position {
+    font-weight: bold; /* Bold text for positions */
+    color: #48cae4; /* Color for position indication */
+}
+
+
+
+/* Animation keyframes for fade-in effect */
+@keyframes fadeIn {
+    from { 
+        opacity: 0; 
+        transform: translateY(20px); 
+    }
+    to { 
+        opacity: 1; 
+        transform: translateY(0); 
+    }
+}

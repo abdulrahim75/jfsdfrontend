@@ -1,0 +1,109 @@
+.student-list-container {
+  background: linear-gradient(135deg, #1a1a2e, #16213e);
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.student-list-container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+}
+
+.student-list-container h3 {
+  color: #e94560;
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  animation: glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+  from {
+      text-shadow: 0 0 5px #e94560, 0 0 10px #e94560;
+  }
+  to {
+      text-shadow: 0 0 10px #e94560, 0 0 20px #e94560;
+  }
+}
+
+.student-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.student-item {
+  background-color: rgba(255, 255, 255, 0.1);
+  margin-bottom: 1rem;
+  padding: 1rem;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between; /* Keep this for space between student roll and icon container */
+  align-items: center;
+  transition: all 0.3s ease;
+  animation: fadeIn 0.5s ease-out forwards;
+  opacity: 0;
+}
+.student-item:hover {
+  transform: scale(1.02);
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.student-roll {
+  color: #a0a0a0;
+}
+.icon-container {
+  display: flex; /* Use flexbox for icon alignment */
+  align-items: center; /* Center icons vertically */
+}
+/* Reduced margin for even closer spacing */
+.edit-icon, .delete-icon, .details-icon {
+
+  margin-left: 30px;
+  color: #007bff; /* Change color as needed */
+}
+
+.edit-icon:hover {
+  color: #0056b3; /* Hover color */
+}
+
+.delete-icon:hover {
+  color: #dc3545; /* Hover color */
+}
+
+.details-icon {
+  color: #4CAF50; /* Color for details icon */
+}
+
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+      transform: translateY(20px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+.student-item:nth-child(1) { animation-delay: 0.1s; }
+.student-item:nth-child(2) { animation-delay: 0.2s; }
+.student-item:nth-child(3) { animation-delay: 0.3s; }
+.student-item:nth-child(4) { animation-delay: 0.4s; }
+.student-item:nth-child(5) { animation-delay: 0.5s; }
+
+@media (max-width: 600px) {
+  .student-item {
+      flex-direction: column;
+      align-items: flex-start;
+  }
+
+  .student-roll {
+      margin-top: 0.5rem;
+  }
+}
